@@ -1,15 +1,9 @@
 const dateTime = require("..");
 
-const date = new Date();
-
 test('Testar metodo que retorta data completa', () => {
-  const fullDate = date.toISOString().split('T')[0];
-
-  expect(dateTime.fullDate()).toBe(fullDate);
+  expect(dateTime.fullDate()).toBe(new Date().toLocaleDateString());
 });
 
 test('Testar metodo que retorta hora completa', () => {
-  const fullTime = date.toISOString().split('T')[1].split('.')[0];
-
-  expect(dateTime.fullTime()).toBe(fullTime);
+  expect(dateTime.fullTime()).toBe(new Date().toLocaleTimeString());
 });

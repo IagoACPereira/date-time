@@ -1,25 +1,15 @@
 class DateTime {
-  #date;
-
-  constructor() {
-    this.#date = new Date();
-  }
-
   fullDate() {
-    return this.#date
-      .toISOString()
-      .split('T')[0];
+    return new Date()
+      .toLocaleDateString();
   }
 
   fullTime() {
-    return this.#date
-      .toISOString()
-      .split('T')[1]
-      .split('.')[0];
+    return new Date()
+      .toLocaleTimeString();
   }
 }
 
 const dateTime = new DateTime();
 
 module.exports = dateTime;
-
